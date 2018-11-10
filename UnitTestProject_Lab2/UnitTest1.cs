@@ -32,9 +32,17 @@ namespace UnitTestProject_Lab2
 
             // Assert.IsTrue(false);
             stack.Push("asa");
-            stack.Pop();
+            var result = stack.Pop();
 
-            Assert.AreEqual(0, stack.Count - 1);
+            Assert.AreEqual("asa", result);
+        }
+
+        [Test]
+        public void Pop_obj1()
+        {
+            var stack = new Stack<string>();
+
+            Assert.That(() => stack.Pop(), Throws.InvalidOperationException);
         }
 
         [Test]
